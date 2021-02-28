@@ -1,96 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class DashboardPage extends StatefulWidget {
-  DashboardPage({Key key, this.title}) : super(key: key);
+class Dashboard extends StatefulWidget {
+  Dashboard({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _DashboardPageState createState() => _DashboardPageState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Color(0xFFF0F0F5),
-      statusBarBrightness: Brightness.light,
-    ));
-  }
+class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF0F0F5),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-        automaticallyImplyLeading: false,
-        titleSpacing: 0.0,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 25.0),
-          child: Image.asset('assets/logo.png'),
-        ),
-        actions: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 25.0),
-              child: RichText(
-                text: TextSpan(
-                  text: 'Total de ', style: TextStyle(color: Color(0xFF737380), fontSize: 15),
-                  children: <TextSpan>[
-                    TextSpan(text: '42 casos', style: TextStyle(fontWeight: FontWeight.bold))
-                  ]
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(24.0),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Color(0xFFF0F0F5),
+        padding: EdgeInsets.all(24.0),
+        child: SafeArea(
+          top: true,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Bem-vindo!', style: TextStyle(color: Color(0xFF13131A), fontSize: 30.0, fontWeight: FontWeight.w500)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset('assets/logo.png'),
 
+                  RichText(
+                    text: TextSpan(
+                      text: 'Total de ', style: TextStyle(color: Color(0xFF737380), fontSize: 15),
+                      children: <TextSpan>[
+                        TextSpan(text: '42 casos', style: TextStyle(fontWeight: FontWeight.bold))
+                      ]
+                    ),
+                  )
+                ],
+              ),
+
+              SizedBox(height: 48.0),
+              Text('Bem-vindo!', style: TextStyle(color: Color(0xFF13131A), fontSize: 30.0, fontWeight: FontWeight.w500)),
+ 
               SizedBox(height: 16.0),
               Text('Escolha um dos casos abaixo\ne salve o dia.', style: TextStyle(height: 1.5, color: Color(0xFF737380), fontSize: 20.0)),
 
               SizedBox(height: 32.0),
-              // Expanded(
-              //   child: ListView.separated(
-              //     physics: BouncingScrollPhysics(),
-              //     itemCount: 10,
-              //     itemBuilder: (context, i) => card(),
-              //     separatorBuilder: (context, i) => SizedBox(height: 16.0),
-              //   ),
-              // )
-
-              Column(
-                children: [
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                  card(),
-                  SizedBox(height: 16.0),
-                ],
+              Expanded(
+                child: ListView.separated(
+                  physics: BouncingScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (context, i) => card(),
+                  separatorBuilder: (context, i) => SizedBox(height: 16.0),
+                ),
               )
             ],
           ),
