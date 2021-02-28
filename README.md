@@ -1,16 +1,16 @@
-# bethehero
+# Be The Hero
 
-A new Flutter project.
+Desafio feito no evento OmniStack 11 feito pela [@RocketSeat](https://github.com/rocketseat)
 
-## Getting Started
+# Screenshots
+![Splash](https://i.ibb.co/QnQ7xFC/splash.png)
 
-This project is a starting point for a Flutter application.
+![Lista](https://i.ibb.co/RPxsgXt/dashboard.png)
+![Detalhes](https://i.ibb.co/cvGP0MW/details.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Me segue aí
+[Github: @luscas](https://github.com/luscas)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[Twitter: @lucasreservinha](https://twitter.com/lucasreservinha)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Instagram: @lucaswcg](https://instagram.com/lucaswcg)
